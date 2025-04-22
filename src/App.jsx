@@ -7,6 +7,7 @@ import Page4 from "./pages/Page4";
 // import Page7 from "./pages/Page7";
 // import Page9 from "./pages/Page9";
 // import Page11 from "./pages/Page11";
+// import Page12 from "./pages/Page12";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         {/* <Route path="/" element={<Page8 />}></Route> */}
         {/* <Route path="/" element={<Page9 />}></Route> */}
         {/* <Route path="/" element={<Page11 />}></Route> */}
+        {/* <Route path="/" element={<Page12 />}></Route> */}
       </Routes>
     </Router>
   );
