@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+:root {
+  --custom-green: #c9f7bf; /* Your custom color */
+}
