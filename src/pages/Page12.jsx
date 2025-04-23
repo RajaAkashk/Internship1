@@ -3,17 +3,13 @@ import ToggleSwitch from "../components/ToggleSwitch";
 import { AiOutlineSchedule } from "react-icons/ai";
 import { MdVibration } from "react-icons/md";
 import { IoAlarmOutline, IoNotificationsOutline } from "react-icons/io5";
+import BackNav from "../components/BackNav";
 
 function Page12() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Header */}
-      <div
-        className="w-full py-4 px-5"
-        style={{ backgroundColor: "var(--custom-green)" }}
-      >
-        <button className="text-xl ">Back</button>
-      </div>
+      <BackNav />
 
       {/* Main Content */}
       <div className="flex-grow flex items-center justify-center px-4">
