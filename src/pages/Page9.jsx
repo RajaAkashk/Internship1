@@ -20,7 +20,7 @@ function Page9() {
           <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-12 lg:gap-50">
             {/* left side  */}
 
-            <BodyStatus weight={130} />
+            <BodyStatus weight={40} />
 
             {/* Notes */}
             <div className="mt-8 md:mt-0 w-full max-w-md bg-white shadow-lg rounded-lg p-4 md:p-6">

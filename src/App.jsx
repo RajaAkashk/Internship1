@@ -4,11 +4,11 @@ import "./App.css";
 // import Page3 from "./pages/Page3";
 // import Page4 from "./pages/Page4";
 // import Page7 from "./pages/Page7";
-// import Page8 from "./pages/Page8";
+import Page8 from "./pages/Page8";
 // import Page9 from "./pages/Page9";
 // import Page11 from "./pages/Page11";
 // import Page12 from "./pages/Page12";
-import Page13 from "./pages/Page13";
+// import Page13 from "./pages/Page13";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -20,11 +20,11 @@ function App() {
         {/* <Route path="/" element={<Page3 />}></Route> */}
         {/* <Route path="/" element={<Page4 />}></Route> */}
         {/* <Route path="/" element={<Page7 />}></Route> */}
-        {/* <Route path="/" element={<Page8 />}></Route> */}
+        <Route path="/" element={<Page8 />}></Route>
         {/* <Route path="/" element={<Page9 />}></Route> */}
         {/* <Route path="/" element={<Page11 />}></Route> */}
         {/* <Route path="/" element={<Page12 />}></Route> */}
-        <Route path="/" element={<Page13 />}></Route>
+        {/* <Route path="/" element={<Page13 />}></Route> */}
       </Routes>
     </Router>
   );

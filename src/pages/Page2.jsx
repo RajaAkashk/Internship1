@@ -1,20 +1,51 @@
 import React from "react";
+import Spoon from "../assets/spoon.png";
+import { useState } from "react";
+import {
+  FaCalculator,
+  FaHeartbeat,
+  FaDumbbell,
+  FaBoxOpen,
+} from "react-icons/fa";
 
 function Page2() {
+  const [showOverlay, setShowOverlay] = useState(false);
+
+  const buttons = [
+    { label: "Calculate Calories", icon: <FaCalculator className="mr-2" /> },
+    { label: "Check how fit you are", icon: <FaHeartbeat className="mr-2" /> },
+    { label: "Daily Workout", icon: <FaDumbbell className="mr-2" /> },
+    { label: "Our products", icon: <FaBoxOpen className="mr-2" /> },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navbar */}
       <div
-        className="flex flex-col items-end gap-1 py-3 px-4"
+        className="flex items-center justify-end  py-3 px-4"
         style={{ backgroundColor: "var(--custom-green)" }}
       >
-        <img
+        {/* <img
           className="h-7 w-7 mr-2"
           src="https://static.vecteezy.com/system/resources/thumbnails/030/692/151/small/salad-2d-cartoon-vector-illustration-on-white-background-h-free-photo.jpg"
           alt="salad"
-        />
-        <p className="text-sm">Settings</p>
+        /> */}
+        <button className="flex" onClick={() => setShowOverlay(true)}>
+          <img src={Spoon} alt="Spoon icon" className="inline w-7 h-7" />
+          <p className="font-semibold">Settings</p>
+        </button>
       </div>
+
+      {showOverlay && (
+        <div className="fixed top-0 right-0 w-64 h-full bg-gray-50 shadow-lg z-50 p-4 transition-all">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-lg font-bold">Settings</h2>
+            <button onClick={() => setShowOverlay(false)}>✖</button>
+          </div>
+          {/* Your settings content goes here */}
+          <p>Settings content here...</p>
+        </div>
+      )}
 
       {/* Body */}
       <div className="flex-1 flex items-center justify-center bg-gray-50 px-2">
@@ -24,7 +55,7 @@ function Page2() {
               <label className="block text-sm font-medium">Name:</label>
               <input
                 type="text"
-                className="mt-1 block w-full border border-gray-300 rounded px-2 py-1"
+                className="mt-1 block w-full border border-green-300 rounded px-2 py-1"
                 placeholder="Enter your name"
               />
             </div>
@@ -33,7 +64,7 @@ function Page2() {
               <label className="block text-sm font-medium">Age:</label>
               <input
                 type="number"
-                className="mt-1 block w-full border border-gray-300 rounded px-2 py-1"
+                className="mt-1 block w-full border border-green-300 rounded px-2 py-1"
                 placeholder="Enter your age"
               />
             </div>
@@ -60,7 +91,7 @@ function Page2() {
               <label className="block text-sm font-medium">Height (cm):</label>
               <input
                 type="number"
-                className="mt-1 block w-full border border-gray-300 rounded px-2 py-1"
+                className="mt-1 block w-full border border-green-300 rounded px-2 py-1"
                 placeholder="Enter your height"
               />
             </div>
@@ -69,25 +100,25 @@ function Page2() {
               <label className="block text-sm font-medium">Weight (kg):</label>
               <input
                 type="number"
-                className="mt-1 block w-full border border-gray-300 rounded px-2 py-1"
+                className="mt-1 block w-full border border-green-300 rounded px-2 py-1"
                 placeholder="Enter your weight"
               />
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-wrap mt-6 gap-2">
-              <button className="px-4 py-1 bg-green-500 text-white rounded hover:bg-green-600">
-                Calculate Calories
-              </button>
-              <button className="px-4 py-1 bg-gray-200 rounded hover:bg-gray-300">
-                Check how fit you are
-              </button>
-              <button className="px-4 py-1 bg-amber-500 text-white rounded hover:bg-amber-600">
-                Daily Workout
-              </button>
-              <button className="px-4 py-1 bg-red-500 text-white rounded hover:bg-red-600">
-                Our products
-              </button>
+            <div className="mt-6">
+              <div className="flex flex-wrap justify-center gap-2">
+                {buttons.map((btn, index) => (
+                  <button
+                    key={index}
+                    className="px-4 py-1 w-full flex items-center justify-center font-medium rounded hover:text-xl"
+                    style={{ backgroundColor: "var(--custom-green)" }}
+                  >
+                    {btn.icon}
+                    {btn.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </form>
         </div>
